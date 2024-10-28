@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio 03</title>
+    <title>Desafio 05</title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -12,14 +12,31 @@
     </style>
 </head>
 <body>
-    <h1>Antes de Depois</h1>
-    <button onclick="clicar()">Antecessor e Sucessor</button>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="clicar()">
+        Converter
+    </button>
+    <section id="result">
+        <p>Clique no botão acima para iniciar.</p>
+    </section>
     <script>
-        function clicar() {
-            let n1 = Number(window.prompt('Digite um número: '))
-            let sub = n1 - 1
-            let soma = n1 + 1
-            window.alert(`Antes de ${n1}, temos o número ${sub}.Depois de ${n1}, temos o número ${soma}.`) 
+        function clicar(){
+            let m = Number(window.prompt('Digite uma distância em metros (m)'))
+            let res = window.document.getElementById(`result`)
+            res.innerHTML += `<h2>A distância de ${m} corresponde a...</h2>`
+            let Km = m / 1000
+            let Hm = m / 100
+            let Dam = m / 10
+            let dm = m * 10
+            let cm = m * 100
+            let mm = m * 1000
+            res.innerHTML += `<p> ${Km.toFixed(3)} quilômetros (Km)  </p>`
+            res.innerHTML += `<p> ${Hm.toFixed(3)} hectômetros (Hm)  </p>`
+            res.innerHTML += `<p> ${Dam.toFixed(3)} decâmetros (Dam) </p>`
+            res.innerHTML += `<p> ${dm} decimetros (dm)   </p>` 
+            res.innerHTML += `<p> ${cm} centímetros (cm)  </p>`
+            res.innerHTML += `<p> ${mm} milimetros (mm)   </p>`
+
         }
     </script>
 </body>
