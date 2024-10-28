@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 10</title>
+    <Style>
+        body{
+            background-color: lightgray;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .italic {
+            font-style: italic;
+        }
+        .marcacao{
+            background-color: yellow;
+        }
+    </Style>
+</head>
+<body>
+    <h1>Resolvendo Bhaskara</h1>
+    <button onclick="inicio()">Calcular</button>
+    <section id="ação"><p>Considerando uma equação no formato <strong class="italic">ax² + bx + c = 0</strong>, aperte o botão acima para calcular o valor de &Delta;.</p></section>
+    <script>
+        function inicio() {
+            let a = window.prompt(`Qual é o valor de a?`)
+            let b = window.prompt(`Qual é o valor de b?`)
+            let c = window.prompt(`Qual é o valor de c?`)
+
+            let delta = b**2 - 4 * a * c
+
+            let res = window.document.getElementById(`ação`)
+
+            res.innerHTML += `<h2>Resolvendo Bhaskara</h2>`
+            res.innerHTML += `<p>A equação atual é <strong>${a}x² + ${b}x + ${c} = 0</strong></p>`
+            res.innerHTML += `<p>A equação realizada será <strong>&Delta; = ${b}² - 4 . ${a} .${c}</strong></p>`
+            res.innerHTML +=`<p>O valor calculado foi <strong class='marcacao'>&Delta; = ${delta}</strong></p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 07</title>
+    <Style>
+        body{
+            background-color: lightgray;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </Style>
+</head>
+<body>
+    <h1>Conversor R$ => US$</h1>
+    <button onclick="inicio()">Converter</button>
+    <section id="convert">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+    <script>
+        //5.71
+        let cota = window.prompt('Antes de mais nada. Quanto está a cotação do dólar agora?')
+        function inicio() {
+            let real = Number(window.prompt('Quantos reais você tem na carteira?'))
+            let dolar = real / cota
+            let res = window.document.getElementById(`convert`)
+            res.innerHTML += `<h2>A cotação do dólar agora é de US$${cota}...</h2>`
+            res.innerHTML += `<p>Você consegue comprar US$ ${dolar.toFixed(2)} com R$ ${real.toFixed(2)}.</p>`
+        }
+
+    </script>
+</body>
+</html>
