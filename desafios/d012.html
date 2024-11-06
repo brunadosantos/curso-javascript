@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <Style>
+        body{
+            background-color: lightgray;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </Style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <button onclick="clicar()">Verificar</button>
+    <section id="ação">
+        <p>Clique no botão acima para analisar a mudança de preço</p>
+    </section>
+    <script>
+        function clicar() {
+            let preco_antes = Number(window.prompt('Qual era o preco anterior do produto?'))
+            let preco_atual = Number(window.prompt('Qual é o preco atual do produto?'))
+
+            let soma = preco_atual - preco_antes
+            let aum = ((preco_atual - preco_antes ) / preco_antes) * 100
+
+            let subtrai = preco_antes - preco_atual
+            let desc = ((preco_antes - preco_atual) / preco_atual) * 100
+
+            let res = window.document.getElementById('ação')
+            res.innerHTML = `<h2>Analisando os valores informados.</h2>`
+            res.innerHTML += `<p>O produto custava R$${preco_antes.toFixed(2)} e agora custa R$${preco_atual}.</p>`
+
+            if (preco_atual > preco_antes) {
+                res.innerHTML += `<p>Hoje o produto está mais caro.</p>`
+                res.innerHTML += `<p>O preço subiu R$${soma.toFixed(2)} em relação ao preço anterior.</p>`
+                res.innerHTML += `<p>Uma variação de ${aum.toFixed(1)}% para cima</p>`
+            } else {
+                res.innerHTML += `<p>Hoje o produto está mais barato.</p>`
+                res.innerHTML += `<p>O preço caiu R$${subtrai.toFixed(2)} em relação ao preço anterior.</p>`
+                res.innerHTML += `Uma variação de ${desc.toFixed(2)}% para baixo`
+            }
+        }
+    </script>
+</body>
+</html>
